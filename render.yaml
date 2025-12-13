@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/YOUR_USERNAME/n8n-on-render
+    region: oregon
+    plan: starter
+    disk:
+      name: n8n-data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
+    dockerfilePath: Dockerfile
+    autoDeploy: true
