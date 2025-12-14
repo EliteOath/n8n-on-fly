@@ -1,22 +1,36 @@
-app = "n8n-on-fly" # We'll update this to your actual app name later
+# fly.toml app configuration file generated for n8n-on-fly-morning-leaf-9187 on 2025-12-13T16:27:20-08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-primary_region = "sjc" # Choose a nearby region (e.g., sea=Seattle, yvr not available)
+app = 'n8n-on-fly-morning-leaf-9187'
+primary_region = 'sjc'
 
 [build]
-dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [http_service]
-internal_port = 5678
-force_https = true
-auto_stop_machines = false
-auto_start_machines = true
-min_machines_running = 1
+  internal_port = 5678
+  force_https = true
+  auto_stop_machines = 'off'
+  auto_start_machines = true
+  min_machines_running = 1
 
 [checks]
   [checks.http]
-    type = "http"
     port = 5678
-    path = "/"
-    interval = "15s"
-    timeout = "5s"
-    grace_period = "30s"
+    type = 'http'
+    interval = '15s'
+    timeout = '5s'
+    grace_period = '30s'
+    path = '/'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
+
+[[mounts]]
+source = "n8n_data"
+destination = "/home/node/.n8n"
