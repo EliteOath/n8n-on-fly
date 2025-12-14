@@ -1,6 +1,6 @@
 app = "n8n-on-fly" # We'll update this to your actual app name later
 
-primary_region = "sea" # Choose a nearby region (e.g., sea=Seattle, yvr not available)
+primary_region = "sjc" # Choose a nearby region (e.g., sea=Seattle, yvr not available)
 
 [build]
 dockerfile = "Dockerfile"
