@@ -16,6 +16,18 @@ primary_region = 'sjc'
   auto_start_machines = true
   min_machines_running = 1
 
+[[services]]
+  internal_port = 5678
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
 [checks]
   [checks.http]
     port = 5678
