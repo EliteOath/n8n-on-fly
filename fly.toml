@@ -47,7 +47,8 @@ primary_region = 'sjc'
 source = "n8n_data"
 destination = "/home/node/.n8n"
 
-N8N_HOST=n8n-on-fly-morning-leaf-9187.fly.dev
-N8N_PORT=5678
-N8N_PROTOCOL=https
-WEBHOOK_TUNNEL_URL=https://n8n-on-fly-morning-leaf-9187.fly.dev
+[env]
+  N8N_HOST=n8n-on-fly-morning-leaf-9187.fly.dev
+  N8N_PORT=5678
+  N8N_PROTOCOL=https
+  WEBHOOK_TUNNEL_URL=https://n8n-on-fly-morning-leaf-9187.fly.dev
